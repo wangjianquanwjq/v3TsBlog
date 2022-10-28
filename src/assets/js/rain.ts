@@ -1,12 +1,12 @@
 // 画笔
-let ctx;
+let ctx: any
 // 画布的宽高
-let w = window.innerWidth;
-let h = window.innerHeight;
+let w = window.innerWidth
+let h = window.innerHeight
 // 存放雨滴的数组
-let arr = [];
+let arr: Array<any>
 // 雨滴的数量
-let size = 50;
+let size = 150
 // 雨滴的构造函数
 class Rain {
     x = random(w);
@@ -24,38 +24,35 @@ class Rain {
     }
 }
 // 画线（雨滴）
-function drawLine(x1, y1) {
+const drawLine = (x1: number, y1: number) => {
     ctx.beginPath();
     ctx.strokeStyle = "#cccccc";
     ctx.moveTo(x1, y1);
     // 雨长度为30
-    ctx.lineTo(x1, y1 + 20);
+    ctx.lineTo(x1, y1 + 30);
     ctx.stroke();
 }
 // 生成随机数
-function random(num) {
+const random = (num: number) => {
     return Math.random() * num;
 }
 // 开始
-function start() {
-    for (let i = 0; i < size; i++) {
-        let rain = new Rain();
+const start = () => {
+    for (var i = 0; i < size; i++) {
+        var rain = new Rain();
         arr.push(rain);
         rain.show();
     }
     setInterval(() => {
         ctx.clearRect(0, 0, w, h);
-        for (let i = 0; i < size; i++) {
+        for (var i = 0; i < size; i++) {
             arr[i].show();
             arr[i].run();
         }
-    }, 15);
+    }, 10);
 }
-// 初始化
-function init(ctx1) {
+const init = (ctx1: any) => {
     ctx = ctx1;
     start();
 }
-// 导出初始化函数
 export { init };
-

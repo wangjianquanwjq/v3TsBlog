@@ -3,13 +3,24 @@ import vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'//自动引入文件路由配置
 import path from 'path' //path引入可能报错可以使用 import {resolve} from 'path'
 import { resolve } from 'path'
+import postCssPxToRem from "postcss-pxtorem"//移动端适配
+// elementPlus自动导入
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 export default defineConfig({
   plugins: [vue(),
     // 写这儿的没有配置
-  // Pages({
-  //   dirs: "src/views", // 需要生成路由的文件目录，默认就是识别src下面的views文件
-  //   exclude: ["**/components/*.vue"], // 排除在外的目录，即不将所有 components 目录下的 .vue 文件生成路由
-  // }),
+    // Pages({
+    //   dirs: "src/views", // 需要生成路由的文件目录，默认就是识别src下面的views文件
+    //   exclude: ["**/components/*.vue"], // 排除在外的目录，即不将所有 components 目录下的 .vue 文件生成路由
+    // }),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
   ],
   resolve: {
     alias: {
@@ -23,6 +34,7 @@ export default defineConfig({
       "utils": resolve(__dirname, "src/utils"),
       "apis": resolve(__dirname, "src/apis"),
     },
+    //  extensions: ['.ts', '.js', '.vue', '.json'],
   },
   server: {
     host: '0.0.0.0', //运行后就是你自己的本机ip
@@ -46,8 +58,17 @@ export default defineConfig({
           hack: `true; @import (reference) "${path.resolve("src/assets/css/common.less")}";`,
         },
         javascriptEnabled: true,
-      },
+      }, 
     },
+    // 此代码为适配移动端px2rem
+    postcss: {
+      plugins: [
+        postCssPxToRem({
+          rootValue: 37.5, // 1rem的大小
+          propList: ['*'], // 需要转换的属性，这里选择全部都进行转换
+        })
+      ]
+    }
   },
   build: {
     outDir: 'dist',
@@ -71,5 +92,6 @@ export default defineConfig({
         drop_debugger: true
       }
     },
-  }
+  },
+
 })
