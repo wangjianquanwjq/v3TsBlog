@@ -8,6 +8,8 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElIcon: typeof import('element-plus/es')['ElIcon']
+    ElImage: typeof import('element-plus/es')['ElImage']
     HomeTop: typeof import('./src/components/HomeTop.vue')['default']
     Layout: typeof import('./src/components/Layout.vue')['default']
     Meun: typeof import('./src/components/Meun.vue')['default']
