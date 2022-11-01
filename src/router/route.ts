@@ -20,5 +20,9 @@ export default [
         path: '/resume',
         name: "resume",
         component: () => import('@/views/resume/index.vue'),
+    },{
+        path: '/darkCopy',
+        name: "darkCopy",
+        component: () => import('@/views/darkCopy/index.vue'),
     },
 ]

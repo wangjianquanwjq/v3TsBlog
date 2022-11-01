@@ -38,55 +38,37 @@ export default {
 </script> -->
 
 <template>
-  <div class="homeTop">
-    <canvas id="canvas" />
-    <div class="homeBg" :style="canvasStyle">
+  <div id="homeTop">
+    <div class="homeBg">
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import type { CSSProperties } from 'vue';
-import { init } from '../assets/js/rain'
-let canvasStyle = reactive<CSSProperties>({
-  position: "fixed",
-  width: "100%",
-  height: "100%",
-  zIndex: -1,
-  left: "0",
-  bottom: "0",
-})
-let ctx = reactive({})
-const initCanvas = () => {
-  let canvas: any = document.querySelector("#canvas");
-  ctx = canvas.getContext("2d");
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-  init(ctx);
 
-}
+
 onMounted(() => {
-  initCanvas()
+
+
+})
+onUnmounted(() => {
+
 })
 </script>
 <style scoped lang="less">
-#canvas {
-  background: url('assets/image/header-bg.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.homeTop {
+#homeTop {
   height: 100vh;
-  // .homeBg {
-  //   &:before {
-  //     content: "";
-  //     height: 100%;
-  //     position: absolute;
-  //     background: url('assets/image/header-bg.jpg') no-repeat center center;
-  //     width: 100%;
-  //     top: 0;
-  //     background-size: cover;
-  //   }
-  // }
+  .homeBg {
+    &:before {
+      content: "";
+      height: 100%;
+      position: absolute;
+      background: url('assets/image/header-bg.jpg') no-repeat center center;
+      width: 100%;
+      top: 0;
+      background-size: cover;
+    }
+  }
 }
 </style>

@@ -1,32 +1,105 @@
 body {
+  margin: 0;
+  background: #f4f8fb;
+
+  ul {
+    list-style-type: none;
     margin: 0;
-    // 出现滚动条的时候防止页面跳动
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    margin: 0;
+  }
+
+  // 出现滚动条的时候防止页面跳动
+  .wrap-outer {
+    margin-left: calc(100vw - 100%);
+  }
+
+  @media screen and (min-width: 1150px) {
     .wrap-outer {
-        margin-left: calc(100vw - 100%);
+      margin-left: calc(100vw - 100%);
+    }
+  }
+
+  // 修改滚动条样式
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 4px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: hsla(0, 0%, 53%, 0.4);
+  }
+
+  &:hover::-webkit-scrollbar-track {
+    background: hsla(0, 0%, 53%, 0.1);
+  }
+
+  // 主体内容  定板的
+  @media (max-width: 768px) {
+
+    //>=768的设备
+    #contentBox {
+      max-width: 90%;
+      margin: 40px auto;
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 8px 14px 38px rgb(39 44 49 / 6%), 1px 3px 8px rgb(39 44 49 / 3%);
+    }
+  }
+
+  @media (min-width: 992px) {
+
+    //>=992的设备 
+    #contentBox {
+      max-width: 80%;
+      margin: 40px auto;
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 8px 14px 38px rgb(39 44 49 / 6%), 1px 3px 8px rgb(39 44 49 / 3%);
     }
 
-    @media screen and (min-width: 1150px) {
-        .wrap-outer {
-            margin-left: calc(100vw - 100%);
-        }
+  }
+
+  @media (min-width: 1200px) {
+
+    //>=1200的设备
+    #contentBox {
+      max-width: 70%;
+      margin: 40px auto;
+      border-radius: 10px;
+      background: #fff;
+      padding: 20px;
+      box-sizing: border-box;
+      box-shadow: 8px 14px 38px rgb(39 44 49 / 6%), 1px 3px 8px rgb(39 44 49 / 3%);
     }
-    // 修改滚动条样式
-    &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-        background: transparent;
-      }
-  
-      &::-webkit-scrollbar-thumb {
-        background: transparent;
-        border-radius: 4px;
-      }
-  
-      &:hover::-webkit-scrollbar-thumb {
-        background: hsla(0, 0%, 53%, 0.4);
-      }
-  
-      &:hover::-webkit-scrollbar-track {
-        background: hsla(0, 0%, 53%, 0.1);
-      }
+
+  }
+}
+
+// 常用的公共样式
+.mt20px {
+  margin-top: 20px;
+
+}
+
+.textIndent40px {
+  text-indent: 40px;
 }
