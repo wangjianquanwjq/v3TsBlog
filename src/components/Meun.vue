@@ -88,7 +88,7 @@ defineExpose({ sideMenuFalse })
     text-align: center;
 
     .topContent {
-        background: url('../assets/image/side-bg.gif') no-repeat center center;
+        background: url('../assets/image/sideBg.gif') no-repeat center center;
         width: 100%;
         height: 478px;
         background-size: cover;

@@ -70,7 +70,7 @@ onUnmounted(() => {
     content: "";
     height: 100%;
     position: absolute;
-    background: url('../assets/image/header-bg.jpg') no-repeat center center;
+    background: url('../assets/image/headerBg.jpg') no-repeat center center;
     width: 100%;
     top: 0;
     background-size: cover;
