@@ -72,7 +72,7 @@ defineExpose({ sideMenuFalse })
     cursor: pointer;
     transition: left .3s ease;
     padding: 20px 30px 20px 80px;
-    background: url('assets/image/menu.png') no-repeat;
+    background: url('../assets/image/menu.png') no-repeat;
     background-size: 25%;
     background-position-y: center;
     background-position-x: 20px;
@@ -88,7 +88,7 @@ defineExpose({ sideMenuFalse })
     text-align: center;
 
     .topContent {
-        background: url('assets/image/side-bg.gif') no-repeat center center;
+        background: url('../assets/image/side-bg.gif') no-repeat center center;
         width: 100%;
         height: 478px;
         background-size: cover;

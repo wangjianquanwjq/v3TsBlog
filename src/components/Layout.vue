@@ -8,7 +8,7 @@
                 <component :is="Component" v-bind:key="Component"></component>
             </transition-group>
         </router-view>
-        <!-- <starry-sky :stars-count="1000" :distance="100" /> -->
+        <starry-sky :stars-count="1000" :distance="100" />
         <Footer @click="showMenuClick" />
         <Meun @showMenu='showMenu' ref="childRef" />
     </div>
