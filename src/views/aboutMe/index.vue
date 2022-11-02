@@ -7,8 +7,8 @@
                 <li>王健全/男/汉/1995</li>
                 <li>专科/计算机应用/四川工商职业技术学院</li>
                 <li>13699004020/610743994@qq.com</li>
-                <li>个人博客：<a target=“_blank” href="http://wangjianquan.love">http://wangjianquan.love</a></li>
-                <li>职业专长：网页设计与开发，JavaScript/vue2/vue3/react</li>
+                <li>个人博客:<a target=“_blank” href="http://wangjianquan.love">http://wangjianquan.love</a></li>
+                <li>职业专长:网页设计与开发，JavaScript/vue2/vue3/react</li>
             </ul>
         </div>
         <br>
@@ -47,13 +47,9 @@
 </script>
 <style lang="less" scoped>
 #contentBox {
-    padding: 80px;
-    box-sizing: border-box;
-
     .title {
         margin-bottom: 40px;
     }
-
     // 基本信息
     .essentialInformation {
         .ul {
@@ -69,7 +65,7 @@
                 font-weight: bold;
                 position: relative;
                 background: url('assets/image/spot.png') no-repeat;
-                background-position-y:center ;
+                background-position-y: center;
                 background-position-x: -20px;
             }
         }

@@ -1,8 +1,6 @@
 <template>
-    <div class="home">
-        首页
-        <el-button size="large">首页</el-button>
-        <el-button type="primary">首页</el-button>
+    <div class="home" id="contentBox">
+        <h1>不要急，完善中。。。</h1>
     </div>
 </template>
 <script lang="ts" setup>

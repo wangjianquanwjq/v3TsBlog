@@ -10,37 +10,51 @@
                     <el-image style="width: 32px; height: 32px" :src="outImg" fit="fill" />
                 </div>
                 <br>
-                <div class="avatar">
-                    <el-avatar :size="80" src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
-                </div>
+                <transition-group appear name="animate__animated animate__bounce" enter-active-class="animate__shakeY"
+                    leave-active-class="animate__rotateOutDownLeft">
+                    <div class="avatar" v-if="showTitle">
+                        <el-avatar :size="80" src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
+                    </div>
+                </transition-group>
+                <p>Mr王</p>
             </div>
             <ul class="navList">
                 <li>
                     <el-divider>分割</el-divider>
                 </li>
-                <li @click="darkCopy">深浅拷贝</li>
-                <li @click="aboutMe">关于我</li>
+                <li @click="goRouter('home')">首页</li>
+                <li @click="goRouter('darkCopy')">深浅拷贝</li>
+                <li @click="goRouter('aboutMe')">关于我</li>
             </ul>
-
         </div>
     </transition-group>
 
 </template>
 <script lang="ts" setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, defineEmits, defineProps } from 'vue'
 import { useRouter } from 'vue-router'
 import outImg from 'assets/image/out.png'
+const emit = defineEmits(['showMenu'])//将当前的菜单显示状态传给父组件
+// // 接受组件的值
+// const props=defineProps({
+//     isShow:Number
+// })
 const router = useRouter()
 const showMenu = ref(false)
+const showTitle = ref(true)
 const sideMenuBut = () => {
     showMenu.value = !showMenu.value
+    emit('showMenu', showMenu.value)
 }
-const darkCopy = () => {
-    router.push('./darkCopy')
+const sideMenuFalse = () => {
+    showMenu.value = false
 }
-const aboutMe = () => {
-    router.push('./aboutMe')
+const goRouter = (val: string) => {
+    sideMenuFalse()
+    router.push(`./${val}`)
 }
+// 父组件调用 子组件的中的方法     需要暴露出去
+defineExpose({ sideMenuFalse })
 </script>
 <style lang="less" scoped>
 .side__menu {
@@ -80,11 +94,16 @@ const aboutMe = () => {
         background-size: cover;
         padding: 20px;
         box-sizing: border-box;
+        color: #fff;
 
         .outImg {
             height: 32px;
             text-align: right;
             cursor: pointer;
+        }
+
+        .avatar {
+            margin-bottom: 20px;
         }
     }
 

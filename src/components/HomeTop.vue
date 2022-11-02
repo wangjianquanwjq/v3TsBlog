@@ -39,17 +39,22 @@ export default {
 
 <template>
   <div id="homeTop">
-    <div class="homeBg">
-    </div>
+    <transition-group appear name="animate__animated animate__bounce" enter-active-class="animate__hinge"
+      leave-active-class="animate__rotateOutDownLeft">
+      <div class="homeBg" v-if="showTitle">
+        <div class="title">Mr王的个人博客</div>
+        <div class="text">在线搬砖，只为生活</div>
+      </div>
+    </transition-group>
   </div>
 </template>
 <script lang="ts" setup>
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import type { CSSProperties } from 'vue';
-
+const showTitle = ref(true)
 
 onMounted(() => {
-
+  // showTitle.value=true
 
 })
 onUnmounted(() => {
@@ -59,15 +64,36 @@ onUnmounted(() => {
 <style scoped lang="less">
 #homeTop {
   height: 100vh;
+  position: relative;
+
+  &:before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    background: url('assets/image/header-bg.jpg') no-repeat center center;
+    width: 100%;
+    top: 0;
+    background-size: cover;
+  }
+
   .homeBg {
-    &:before {
-      content: "";
-      height: 100%;
-      position: absolute;
-      background: url('assets/image/header-bg.jpg') no-repeat center center;
-      width: 100%;
-      top: 0;
-      background-size: cover;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    .title {
+      font-size: 100px;
+      font-weight: bold;
+      color: #fff;
+      white-space: nowrap
+    }
+
+    .text {
+      color: #fff;
+      font-size: 40px;
+      font-weight: 500;
     }
   }
 }
