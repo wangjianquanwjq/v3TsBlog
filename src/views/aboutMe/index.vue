@@ -9,6 +9,7 @@
                 <li>13699004020/610743994@qq.com</li>
                 <li>个人博客:<a target=“_blank” href="http://wangjianquan.love">http://wangjianquan.love</a></li>
                 <li>职业专长:网页设计与开发，JavaScript/vue2/vue3/react</li>
+                <li>js常见方法封装:<a target=“_blank” href="https://www.npmjs.com/package/wjqutils">https://www.npmjs.com/package/wjqutils</a></li>
             </ul>
         </div>
         <br>
@@ -17,39 +18,55 @@
             <h2 class="title">工作经历</h2>
             <div class="lineTime">
                 <el-timeline>
-                    <el-timeline-item timestamp="2011-11~至今" placement="top">
+                    <el-timeline-item :timestamp="item.timestamp" placement="top" v-for="(item, index) in data"
+                        :key="index">
                         <el-card>
-                            <h3>大陆希望集团（希望银厥）</h3>
-                            <p> 前端开发、产品设计参与（和产品撕逼）、保洁、火夫、搬运工等。</p>
-                        </el-card>
-                    </el-timeline-item>
-                    <el-timeline-item timestamp="2020/7~2011-11" placement="top">
-                        <el-card>
-                            <h3>北京腾信软创科技</h3>
-                            <p>前端开发、产品设计参与（和产品撕逼）、保洁、火夫、搬运工等。</p>
-                        </el-card>
-                    </el-timeline-item>
-                    <el-timeline-item timestamp="2017/8~2020/7" placement="top">
-                        <el-card>
-                            <h3>四川元玄科技科技</h3>
-                            <p>前端开发、产品设计参与（和产品撕逼）、保洁、火夫、搬运工等。</p>
+                            <div class="top">
+                                <h3>{{ item.title }}</h3>
+                                <h3 class="details" @click="goDetails"> 详情 </h3>
+                            </div>
+                            <p> {{ item.content }}</p>
                         </el-card>
                     </el-timeline-item>
                 </el-timeline>
             </div>
-
-
         </div>
+        <router-view></router-view>
     </div>
 </template>
 <script lang="ts" setup>
-
+import { useRouter } from 'vue-router'
+import { ElTimeline, ElTimelineItem, ElCard } from 'element-plus';
+import { ref, reactive } from 'vue'
+const router = useRouter()
+const data: Array<object> = reactive([
+    {
+        title: "大陆希望集团（希望银厥）",
+        timestamp: "2011-11~至今",
+        content: "前端开发、产品设计参与（和产品撕逼）、保洁、火夫、搬运工等。",
+        id: 1
+    }, {
+        title: "北京腾信软创科技",
+        timestamp: "22020/7~2011-11",
+        content: "前端开发、产品设计参与（和产品撕逼）、保洁、火夫、搬运工等。",
+        id: 2
+    }, {
+        title: "四川元玄科技科技",
+        timestamp: "2017/8~2020/7",
+        content: "前端开发、产品设计参与（和产品撕逼）、保洁、火夫、搬运工等。",
+        id: 3
+    },
+])
+const goDetails = () => {
+    router.push({ path: './aboutMeDetails'+1 });
+}
 </script>
 <style lang="less" scoped>
 #contentBox {
     .title {
         margin-bottom: 40px;
     }
+
     // 基本信息
     .essentialInformation {
         .ul {
@@ -77,6 +94,17 @@
         .lineTime {
             padding-left: 40px;
 
+            .top {
+                display: flex;
+                justify-content: space-between;
+
+                .details {
+                    color: #916dd5;
+                    cursor: pointer;
+                }
+            }
+
+
             h3 {
                 margin-bottom: 40px;
                 font-size: 30px;
@@ -90,6 +118,7 @@
                 font-size: 40px;
                 margin-bottom: 20px;
             }
+
         }
 
     }

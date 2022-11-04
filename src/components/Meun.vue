@@ -13,7 +13,8 @@
                 <transition-group appear name="animate__animated animate__bounce" enter-active-class="animate__shakeY"
                     leave-active-class="animate__rotateOutDownLeft">
                     <div class="avatar" v-if="showTitle">
-                        <el-avatar :size="80" src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
+                        <el-avatar :size="80"
+                            src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
                     </div>
                 </transition-group>
                 <p>Mr王</p>
@@ -22,9 +23,11 @@
                 <li>
                     <el-divider>分割</el-divider>
                 </li>
-                <li @click="goRouter('home')">首页</li>
-                <li @click="goRouter('darkCopy')">深浅拷贝</li>
-                <li @click="goRouter('aboutMe')">关于我</li>
+                <li v-for="(item, index) in menuListData" :key="index">
+                    <div @click="goRouter(item.path)">
+                        {{ item.name }}
+                    </div>
+                </li>
             </ul>
         </div>
     </transition-group>
@@ -41,7 +44,27 @@ const emit = defineEmits(['showMenu'])//将当前的菜单显示状态传给父�
 // })
 const router = useRouter()
 const showMenu = ref(false)
-const showTitle = ref(true)
+const showTitle = ref<boolean>(true)
+const menuListData = reactive<object>([
+    {
+        name: "首页",
+        path: "home"
+    }, {
+        name: "深浅拷贝",
+        path: "darkCopy"
+    }, {
+        name: "关于我",
+        path: "aboutMe"
+    }, {
+        name: "vue和react",
+        path: "vueIsReact"
+    }, {
+        name: "JavaScript",
+        path: "JavaScript"
+    },
+])
+
+
 const sideMenuBut = () => {
     showMenu.value = !showMenu.value
     emit('showMenu', showMenu.value)
@@ -50,6 +73,8 @@ const sideMenuFalse = () => {
     showMenu.value = false
 }
 const goRouter = (val: string) => {
+    console.log(val);
+    
     sideMenuFalse()
     router.push(`./${val}`)
 }

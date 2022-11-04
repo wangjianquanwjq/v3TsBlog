@@ -49,12 +49,24 @@ export default {
   </div>
 </template>
 <script lang="ts" setup>
+import axios from 'axios'
 import { ref, reactive, onMounted, onUnmounted } from 'vue'
 import type { CSSProperties } from 'vue';
 const showTitle = ref(true)
 
 onMounted(() => {
   // showTitle.value=true
+  // console.log('------------', axios)
+  // axios({
+  //   method: 'get',
+  //   url: 'api/user/1001',
+  //   responseType: 'stream'
+  // })
+  //   .then(function (response) {
+  //    console.log(response);
+     
+  //   });
+
 
 })
 onUnmounted(() => {

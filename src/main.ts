@@ -18,4 +18,6 @@ const app = createApp(App)
 app.use(ElementPlus)
 app.use(hljsVuePlugin)
 app.use(Vue3StarrySky);
-app.use(router).mount('#app')
+app.use(router)
+app.mount('#app')
+

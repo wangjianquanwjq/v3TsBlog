@@ -43,7 +43,7 @@ export default defineConfig({
     open: true,//打开浏览器，直接设置为true，打开默认浏览器
     proxy: {
       '/api': {
-        target: "",
+        target: "http://172.18.14.88:8080/",
         ws: true,
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')

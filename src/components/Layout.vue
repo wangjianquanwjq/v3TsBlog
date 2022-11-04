@@ -5,7 +5,8 @@
         <router-view @click="showMenuClick" v-slot="{ Component }">
             <transition-group appear name="animate__animated animate__bounce"
                 enter-active-class="animate__fadeInTopRight" leave-active-class="animate__fadeOutBottomRight">
-                <component :is="Component" v-bind:key="Component"></component>
+                <component :is="Component" v-bind:key="Component">
+                </component>
             </transition-group>
         </router-view>
         <starry-sky :stars-count="1000" :distance="100" />
