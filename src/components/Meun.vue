@@ -45,7 +45,7 @@ const emit = defineEmits(['showMenu'])//将当前的菜单显示状态传给父�
 const router = useRouter()
 const showMenu = ref(false)
 const showTitle = ref<boolean>(true)
-const menuListData = reactive<object>([
+const menuListData = reactive<any>([
     {
         name: "首页",
         path: "home"
@@ -73,8 +73,6 @@ const sideMenuFalse = () => {
     showMenu.value = false
 }
 const goRouter = (val: string) => {
-    console.log(val);
-    
     sideMenuFalse()
     router.push(`./${val}`)
 }

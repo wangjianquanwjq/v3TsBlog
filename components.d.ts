@@ -7,14 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    AboutMeDetails: typeof import('./src/components/aboutMeDetails/index.vue')['default']
     ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElBacktop: typeof import('element-plus/es')['ElBacktop']
-    ElCard: typeof import('element-plus/es')['ElCard']
     ElDivider: typeof import('element-plus/es')['ElDivider']
     ElImage: typeof import('element-plus/es')['ElImage']
-    ElTimeline: typeof import('element-plus/es')['ElTimeline']
-    ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     Footer: typeof import('./src/components/Footer.vue')['default']
     HomeTop: typeof import('./src/components/HomeTop.vue')['default']
     Layout: typeof import('./src/components/Layout.vue')['default']

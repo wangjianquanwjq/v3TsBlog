@@ -9,7 +9,7 @@
                 <li>13699004020/610743994@qq.com</li>
                 <li>个人博客:<a target=“_blank” href="http://wangjianquan.love">http://wangjianquan.love</a></li>
                 <li>职业专长:网页设计与开发，JavaScript/vue2/vue3/react</li>
-                <li>js常见方法封装:<a target=“_blank” href="https://www.npmjs.com/package/wjqutils">https://www.npmjs.com/package/wjqutils</a></li>
+                <li><span class="nowrap">js常见方法封装:</span><a class="break-all" target=“_blank” href="https://www.npmjs.com/package/wjqutils">https://www.npmjs.com/package/wjqutils</a></li>
             </ul>
         </div>
         <br>
@@ -39,7 +39,7 @@ import { useRouter } from 'vue-router'
 import { ElTimeline, ElTimelineItem, ElCard } from 'element-plus';
 import { ref, reactive } from 'vue'
 const router = useRouter()
-const data: Array<object> = reactive([
+const data: Array<any> = reactive([
     {
         title: "大陆希望集团（希望银厥）",
         timestamp: "2011-11~至今",

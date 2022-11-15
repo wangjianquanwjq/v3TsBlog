@@ -34,6 +34,7 @@ const showMenu = (val?: boolean) => {
 </script>
 <style lang="less" scoped>
 .content {
+    overflow: auto;
     /deep/ .el-backtop {
         width: 60px;
         height: 60px;
