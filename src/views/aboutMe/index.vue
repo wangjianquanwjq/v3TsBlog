@@ -6,7 +6,7 @@
             <ul class="ul">
                 <li>王健全/男/汉/1995</li>
                 <li>专科/计算机应用/四川工商职业技术学院</li>
-                <li>13699004020/610743994@qq.com</li>
+                <li>136****4020/610743994@qq.com</li>
                 <li>个人博客:<a target=“_blank” href="http://wangjianquan.love">http://wangjianquan.love</a></li>
                 <li>职业专长:网页设计与开发，JavaScript/vue2/vue3/react</li>
                 <li><span class="nowrap">js常见方法封装:</span><a class="break-all" target=“_blank” href="https://www.npmjs.com/package/wjqutils">https://www.npmjs.com/package/wjqutils</a></li>
