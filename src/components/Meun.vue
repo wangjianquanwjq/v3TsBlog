@@ -14,7 +14,7 @@
                     leave-active-class="animate__rotateOutDownLeft">
                     <div class="avatar" v-if="showTitle">
                         <el-avatar :size="80"
-                            src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" />
+                            src="https://great.wzznft.com/i/2023/02/13/ilee66.jpg" />
                     </div>
                 </transition-group>
                 <p>Mr王</p>

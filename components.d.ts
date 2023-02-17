@@ -17,5 +17,6 @@ declare module '@vue/runtime-core' {
     Meun: typeof import('./src/components/Meun.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Video: typeof import('./src/components/video.vue')['default']
   }
 }
