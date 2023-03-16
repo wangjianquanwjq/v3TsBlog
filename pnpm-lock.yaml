@@ -21,8 +21,10 @@ specifiers:
   vue: ^3.2.41
   vue-router: ^4.1.6
   vue-tsc: ^1.0.9
-  vue-video-player: 5.0.2
+  vue-video-player: ^5.0.2
   vue3-starry-sky: ^0.1.0
+  vue3-video-play: ^1.3.1-beta.6
+  wjqutils: ^1.1.0
 
 dependencies:
   '@highlightjs/vue-plugin': 2.1.0_jsvakxz56e7tk77soxhxnrhzhm
@@ -35,6 +37,8 @@ dependencies:
   vue-router: 4.1.6_vue@3.2.47
   vue-video-player: 5.0.2
   vue3-starry-sky: 0.1.0
+  vue3-video-play: 1.3.1-beta.6
+  wjqutils: 1.1.0
 
 devDependencies:
   '@types/node': 18.13.0
@@ -1056,6 +1060,10 @@ packages:
     engines: {node: '>=12.0.0'}
     dev: false
 
+  /hls.js/1.3.4:
+    resolution: {integrity: sha512-iFEwVqtEDk6sKotcTwtJ5OMo/nuDTk9PrpB8FI2J2WYf8EriTVfR4FaK0aNyYtwbYeRSWCXJKlz23xeREdlNYg==}
+    dev: false
+
   /iconv-lite/0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
     engines: {node: '>=0.10.0'}
@@ -1721,6 +1729,11 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /throttle-debounce/3.0.1:
+    resolution: {integrity: sha512-dTEWWNu6JmeVXY0ZYoPuH5cRIwc0MeGbJwah9KUNYSJwommQpCzTySTpEe8Gs1J23aeWEuAobe4Ag7EHVt/LOg==}
+    engines: {node: '>=10'}
+    dev: false
+
   /to-fast-properties/2.0.0:
     resolution: {integrity: sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog==}
     engines: {node: '>=4'}
@@ -1926,7 +1939,7 @@ packages:
   /videojs-vtt.js/0.12.6:
     resolution: {integrity: sha512-XFXeGBQiljnElMhwCcZst0RDbZn2n8LU7ZScXryd3a00OaZsHAjdZu/7/RdSr7Z1jHphd45FnOvOQkGK4YrWCQ==}
     dependencies:
-      global: 4.3.2
+      global: 4.4.0
     dev: false
 
   /videojs-vtt.js/0.15.4:
@@ -2061,6 +2074,14 @@ packages:
       vue: 3.2.47
     dev: false
 
+  /vue3-video-play/1.3.1-beta.6:
+    resolution: {integrity: sha512-Olrx2/LNAds7fuor/yX9ZKT9sOcwcfTt2g2YbbCrEaAmZ5Tb0hwBr5z+/CoLwELzzRzXCHPmWWoT0Wm5W/Nwpw==}
+    dependencies:
+      hls.js: 1.3.4
+      throttle-debounce: 3.0.1
+      vue: 3.2.47
+    dev: false
+
   /webpack-sources/3.2.3:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
@@ -2104,6 +2125,10 @@ packages:
       has-tostringtag: 1.0.0
       is-typed-array: 1.1.10
     dev: true
+
+  /wjqutils/1.1.0:
+    resolution: {integrity: sha512-9//il7Tozl7MeRgxk5k5nx7pG8XyqW8KKhNnk3yXKwVSOmUn2j8StuzUiN/ayDUuq8dlWqYTOhaRe9T9Nzp+Bw==}
+    dev: false
 
   /xhr/2.4.0:
     resolution: {integrity: sha512-TUbBsdAuJbX8olk9hsDwGK8P1ri1XlV+PdEWkYw+HQQbpkiBR8PLgD1F3kQDPBs9l4Px34hP9rCYAZOCCAENbw==}
